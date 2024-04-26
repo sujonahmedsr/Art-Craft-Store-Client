@@ -36,8 +36,8 @@ const Navbar = () => {
                 </div>
                 <Link to={'/'} className="navbar-start flex items-center">
                     <img className="w-10 md:w-14" src={myArt} alt="" />
-                    <a className="text-2xl md:text-3xl font-bold cursor-pointer">
-                        My <span className="text-yellow-500">Arts</span></a>
+                    <p className="text-2xl md:text-3xl font-bold cursor-pointer">
+                        My <span className="text-yellow-500">Arts</span></p>
                 </Link>
 
 

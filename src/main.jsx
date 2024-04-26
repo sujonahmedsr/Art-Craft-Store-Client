@@ -16,6 +16,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import AddArts from './components/AddArts/AddArts.jsx';
 import { ToastContainer } from 'react-toastify';
 import AllArts from './components/AllArts/AllArts.jsx';
+import CardDetails from './components/CardDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: ()=> fetch('http://localhost:5000/arts')
-        
       },
       {
         path: '/login',
@@ -42,6 +42,11 @@ const router = createBrowserRouter([
           <AllArts></AllArts>
         </PrivateRoute>,
         loader: ()=> fetch('http://localhost:5000/arts')
+      },
+      {
+        path: '/details/:id',
+        element: <CardDetails></CardDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/arts/${params.id}`)
       },
       {
         path: '/AddArts',

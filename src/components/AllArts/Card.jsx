@@ -2,7 +2,7 @@
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Card = ({ art }) => {
-    const { image_url, item_name, subcategory_Name, price, rating, stockStatus } = art;
+    const { _id, image_url, item_name, subcategory_Name, price, rating, stockStatus } = art;
     return (
         <div>
             <div className="bg-slate-50 text-slate-900 p-5 rounded-xl shadow-2xl border hover:border-green-500 duration-300 transition ">
@@ -19,7 +19,7 @@ const Card = ({ art }) => {
                         <p className="font-bold">Pirze : {price}$</p>
                         <p className="flex items-center gap-2">Ratings : <FaStar className="text-yellow-400"></FaStar> {rating}</p>
                     </div>
-                    <Link><button className="px-8 py-3 mt-5 bg-green-600 text-white font-semibold rounded-full w-full hover:bg-green-700 duration-300 transition">View Details</button></Link>
+                    <Link to={`/details/${_id}`}><button className="px-8 py-3 mt-5 bg-green-600 text-white font-semibold rounded-full w-full hover:bg-green-700 duration-300 transition">View Details</button></Link>
                 </div>
             </div>
         </div>

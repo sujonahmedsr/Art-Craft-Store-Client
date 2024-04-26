@@ -10,25 +10,25 @@ const Footer = () => {
                             <Link to={'/'}>
                                 <div className="navbar-start flex">
                                     <img className="w-10 md:w-14" src={myArt} alt="" />
-                                    <a className="text-2xl md:text-3xl font-bold cursor-pointer">
-                                        My <span className="text-yellow-500">Arts</span></a>
+                                    <p className="text-2xl md:text-3xl font-bold cursor-pointer">
+                                        My <span className="text-yellow-500">Arts</span></p>
                                 </div>
                             </Link>
                         </div>
                         <div className="col-span-6 text-center md:text-left md:col-span-4 space-y-4">
-                            <p className="pb-1 text-lg font-medium">Category</p>
+                            <p className="pb-1 text-2xl font-bold">Category</p>
                             <ul className='space-y-4'>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Home</a>
+                                    <Link to={'/'} rel="noopener noreferrer" href="#" className=" text-green-600">Home</Link>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">All Arts</a>
+                                    <Link to={'/allArts'} rel="noopener noreferrer" href="#" className=" text-green-600">All Arts</Link>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">Add Arts</a>
+                                    <Link to={'/AddArts'} rel="noopener noreferrer" href="#" className=" text-green-600">Add Arts</Link>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#" className="hover:dark:text-violet-600">My Arts</a>
+                                    <Link to={'/myArts'} rel="noopener noreferrer" href="#" className=" text-green-600">My Arts</Link>
                                 </li>
                             </ul>
                         </div>
