@@ -2,12 +2,17 @@ import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
+// import { signInWithPopup } from "firebase/auth";
+// import auth from "./firebase/firebase";
+// import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth/cordova";
+
 
 const Login = () => {
     const { signInMethod } = useContext(AuthContext)
     const [error, setError] = useState(null);
     const [show, setShow] = useState(false);
     const navigate = useNavigate()
+
     const handleSignInMethod = e => {
         e.preventDefault()
         const from = e.target;
@@ -17,13 +22,36 @@ const Login = () => {
         signInMethod(email, password)
             .then(res => {
                 console.log(res.user);
-                navigate(location?.pathname ? location.pathname : '/login')
+                navigate(location?.pathname ? location.pathname : '/')
             })
             .catch(error => {
                 console.log(error);
                 return setError('Invalid email or password');
             })
     }
+
+
+    // const googleProvider = new GoogleAuthProvider()
+    // const githubProvider = new GithubAuthProvider()
+
+    // const signInWithGoogle = () => {
+    //     signInWithPopup(auth, googleProvider)
+    //         .then(res => {
+    //             console.log(res.user);
+    //             navigate(location?.state ? location.state : '/')
+    //         })
+    //         .catch(error => setError(error))
+    // }
+
+
+    // const signInWithGithub = () => {
+    //     signInWithPopup(auth, githubProvider)
+    //         .then(res => {
+    //             console.log(res.user);
+    //             navigate('/')
+    //         })
+    //         .catch(error => console.log(error));
+    // }
 
     
     return (

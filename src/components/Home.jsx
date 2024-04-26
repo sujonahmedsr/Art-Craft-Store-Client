@@ -1,10 +1,8 @@
-
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+
 const Home = () => {
     return (
         <div>
