@@ -8,6 +8,7 @@ import slider3 from '../assets/slider/91jFFgXWgVL.jpg'
 import slider4 from '../assets/slider/images.jpg'
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from './AllArts/Card';
+import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
     const arts = useLoaderData();
@@ -25,9 +26,19 @@ const Home = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Glass Painting Set</h1>
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <Typewriter
+                                        words={['Glass Painting Set']}
+                                        loop={Infinity}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={100}
+                                        deleteSpeed={100}
+                                        delaySpeed={1000}
+                                    />
+                                </h1>
                                 <p className="mb-5">A set of high-quality glass paints and brushes for creating beautiful designs on glass surfaces.</p>
-                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
+                                <Link to={'/allArts'}><button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button></Link>
                             </div>
                         </div>
                     </div>
@@ -38,9 +49,19 @@ const Home = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Paper Quilling Starter Kit</h1>
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <Typewriter
+                                        words={['Paper Quilling Starter Kit']}
+                                        loop={Infinity}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={100}
+                                        deleteSpeed={100}
+                                        delaySpeed={1000}
+                                    />
+                                </h1>
                                 <p className="mb-5">Everything you need to start paper quilling - tools, strips, and instructions.</p>
-                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
+                                <Link to={'/allArts'}><button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button></Link>
                             </div>
                         </div>
                     </div>
@@ -51,9 +72,19 @@ const Home = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Handmade Greeting Cards Set</h1>
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <Typewriter
+                                        words={['Handmade Greeting Cards Set']}
+                                        loop={Infinity}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={100}
+                                        deleteSpeed={100}
+                                        delaySpeed={1000}
+                                    />
+                                </h1>
                                 <p className="mb-5">A set of 6 beautifully crafted handmade greeting cards for various occasions.</p>
-                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
+                                <Link to={'/allArts'}><button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button></Link>
                             </div>
                         </div>
                     </div>
@@ -64,27 +95,53 @@ const Home = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Lampworking Starter Kit</h1>
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <Typewriter
+                                        words={['Lampworking Starter Kit']}
+                                        loop={Infinity}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={100}
+                                        deleteSpeed={100}
+                                        delaySpeed={1000}
+                                    />
+                                </h1>
+
                                 <p className="mb-5">A comprehensive starter kit for lampworking, includes glass rods, torch, and safety gear.</p>
-                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
+                                <Link to={'/allArts'}><button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button></Link>
                             </div>
                         </div>
                     </div>
                 </SwiperSlide>
             </Swiper>
 
-            <div className='py-20 text-center '>
-                <h1 className='text-4xl font-bold underline'>Craft items section</h1>
-            </div>
-            <div className='grid grid-cols-3 gap-6 container mx-auto py-5'>
-                {
-                    arts.slice(0, 6).map(art => <Card key={art._id} art={art}></Card>)
-                }
 
-            </div>
-            <div className='text-center my-10'>
-                <Link to={'/allArts'} ><button className="px-8 py-3 mt-10 bg-green-600 text-white font-semibold rounded-xl">View All Arts & Crafts</button></Link>
-            </div>
+
+
+            <section className='container mx-auto py-20 px-4'>
+                <div className='text-center '>
+                    <h1 className='text-4xl font-bold'> <Typewriter
+                        words={[' Craft items section']}
+                        loop={Infinity}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={100}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                    </h1>
+                </div>
+                <div className='grid grid-cols-3 gap-6 container mx-auto pt-10'>
+                    {
+                        arts.slice(0, 6).map(art => <Card key={art._id} art={art}></Card>)
+                    }
+
+                </div>
+
+                <div className='text-center'>
+                    <Link to={'/allArts'} ><button className="px-8 py-3 mt-10 bg-green-600 text-white font-semibold rounded-xl">View All Arts & Crafts</button></Link>
+                </div>
+            </section>
         </div>
     );
 };

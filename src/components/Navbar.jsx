@@ -4,8 +4,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { CgMail } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
-import { Tooltip  } from 'react-tooltip'
-import {  toast } from "react-toastify";
+import { Tooltip } from 'react-tooltip'
+import { toast } from "react-toastify";
+import myArt from '../../public/favicon.png'
 
 
 const Navbar = () => {
@@ -27,15 +28,17 @@ const Navbar = () => {
         <div className="bg-base-100 border-b-2 border-b-green-600 z-10 fixed left-0 right-0">
             {/* <ToastContainer></ToastContainer> */}
             <div className="navbar container mx-auto px-4">
-                
+
                 <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden mr-3">
                     {
-                       open ? <FaMinus></FaMinus> : <FaBars></FaBars>
+                        open ? <FaMinus></FaMinus> : <FaBars></FaBars>
                     }
                 </div>
-                <div className="navbar-start">
-                    <a className="text-3xl font-bold cursor-pointer">My <span className="text-green-600">Arts</span></a>
-                </div>
+                <Link to={'/'} className="navbar-start flex items-center">
+                    <img className="w-10 md:w-14" src={myArt} alt="" />
+                    <a className="text-2xl md:text-3xl font-bold cursor-pointer">
+                        My <span className="text-yellow-500">Arts</span></a>
+                </Link>
 
 
                 <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white md:bg-transparent w-full md:w-auto  md:py-0 text-gray-500  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>

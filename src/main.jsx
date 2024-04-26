@@ -38,7 +38,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/allArts',
-        element: <AllArts></AllArts>,
+        element: <PrivateRoute>
+          <AllArts></AllArts>
+        </PrivateRoute>,
         loader: ()=> fetch('http://localhost:5000/arts')
       },
       {

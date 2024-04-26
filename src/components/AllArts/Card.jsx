@@ -19,7 +19,7 @@ const Card = ({ art }) => {
                         <p className="font-bold">Pirze : {price}$</p>
                         <p className="flex items-center gap-2">Ratings : <FaStar className="text-yellow-400"></FaStar> {rating}</p>
                     </div>
-                    <Link><button className="px-8 py-3 mt-5 bg-green-600 text-white font-semibold rounded-full w-full">View Details</button></Link>
+                    <Link><button className="px-8 py-3 mt-5 bg-green-600 text-white font-semibold rounded-full w-full hover:bg-green-700 duration-300 transition">View Details</button></Link>
                 </div>
             </div>
         </div>
