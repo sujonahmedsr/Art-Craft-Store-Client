@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "./firebase/firebase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -12,6 +14,8 @@ const Login = () => {
     const [error, setError] = useState(null);
     const [show, setShow] = useState(false);
     const navigate = useNavigate()
+    let location = useLocation();
+
 
     const handleSignInMethod = e => {
         e.preventDefault()
@@ -23,6 +27,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 navigate(location?.pathname ? location.pathname : '/')
+                toast('login successfully')
             })
             .catch(error => {
                 console.log(error);
@@ -39,6 +44,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 navigate(location?.state ? location.state : '/')
+                toast('login successfully with google account')
             })
             .catch(error => setError(error))
     }
@@ -49,13 +55,15 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 navigate('/')
+                toast('login successfully with github account')
             })
             .catch(error => console.log(error));
     }
 
     
     return (
-        <div className="py-20">
+        <div className="py-20 px-4">
+            <ToastContainer></ToastContainer>
             <div className="w-full max-w-md container mx-auto p-8 space-y-3 rounded-xl text-gray-900 bg-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSignInMethod} className="space-y-6">

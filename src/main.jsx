@@ -14,6 +14,7 @@ import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import SignUp from './components/SignUp.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import AddArts from './components/AddArts/AddArts.jsx';
+import { ToastContainer } from 'react-toastify';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +56,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      
     </AuthProvider>
-
+    <ToastContainer></ToastContainer>
   </React.StrictMode>,
 )

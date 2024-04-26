@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AuthContext = createContext(null)
 
@@ -22,6 +23,7 @@ const AuthProvider = ({ children }) => {
         signOut(auth)
             .then(() => {
                 console.log('log Out success full');
+                
             })
             .catch((error) => {
                 console.log(error);

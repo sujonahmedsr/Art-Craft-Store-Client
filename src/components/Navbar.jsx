@@ -5,13 +5,17 @@ import { AuthContext } from "./AuthProvider/AuthProvider";
 import { CgMail } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
 import { Tooltip  } from 'react-tooltip'
+import {  toast } from "react-toastify";
+
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     const [openProfile, setOpenProfile] = useState(false)
     const [open, setOpen] = useState(false)
+
     const hangleLogOut = () => {
         logOut()
+        toast('log out successfully')
     }
     const styleNav = ({ isActive }) => {
         return {
@@ -21,7 +25,9 @@ const Navbar = () => {
     }
     return (
         <div className="bg-base-100 border-b-2 border-b-green-600 z-10 fixed left-0 right-0">
+            {/* <ToastContainer></ToastContainer> */}
             <div className="navbar container mx-auto px-4">
+                
                 <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden mr-3">
                     {
                        open ? <FaMinus></FaMinus> : <FaBars></FaBars>
