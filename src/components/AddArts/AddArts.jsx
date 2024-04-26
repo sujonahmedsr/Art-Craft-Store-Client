@@ -25,7 +25,7 @@ const AddArts = () => {
             <div className="py-5 text-center">
                 <h1 className="text-3xl font-bold">Add Your Item</h1>
             </div>
-            <form onSubmit={handleAddItem} className="space-y-6 max-w-3xl mx-auto">
+            <form onSubmit={handleAddItem} className="space-y-6 max-w-3xl mx-auto dark:bg-slate-600 light:bg-white shadow-2xl p-10">
                 <div className="flex items-center lg:flex-row flex-col gap-9">
                     <div className="space-y-1 text-sm w-full">
                         <label htmlFor="Email" className="block text-lg font-semibold text-gray-400 ">User Email

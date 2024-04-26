@@ -5,6 +5,7 @@ import { AuthContext } from "./AuthProvider/AuthProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -66,6 +67,9 @@ const SignUp = () => {
                         error && <p className="text-red-600">{error}</p>
                     }
                     <button className="block w-full p-3 text-center rounded-sm text-white bg-green-600">Sign Up</button>
+                    <p className="text-xs text-center sm:px-6 text-gray-400">I have an account?
+                    <Link to={'/login'} className="underline text-green-600">Sign in</Link>
+                </p>
                 </form>
             </div>
         </div>

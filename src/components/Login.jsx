@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "./firebase/firebase";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -63,7 +63,6 @@ const Login = () => {
     
     return (
         <div className="py-20 px-4">
-            <ToastContainer></ToastContainer>
             <div className="w-full max-w-md container mx-auto p-8 space-y-3 rounded-xl text-gray-900 bg-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSignInMethod} className="space-y-6">
