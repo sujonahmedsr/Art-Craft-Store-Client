@@ -13,6 +13,12 @@ const Navbar = () => {
     const hangleLogOut = () => {
         logOut()
     }
+    const styleNav = ({ isActive }) => {
+        return {
+            fontWeight: isActive ? "bold" : "",
+            color: isActive ? "#41B06E" : "",
+        };
+    }
     return (
         <div className="bg-base-100 shadow-lg z-10 fixed left-0 right-0">
             <div className="navbar container mx-auto px-4">
@@ -28,10 +34,10 @@ const Navbar = () => {
 
                 <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white md:bg-transparent w-full md:w-auto  md:py-0 text-gray-500  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>
                     <ul className="text-lg font-medium flex lg:flex-row flex-col md:space-y-0 md:space-x-6 space-x-0 space-y-4 py-4 pl-5">
-                        <li><NavLink>Home</NavLink></li>
-                        <li><NavLink>All Art & craft Items</NavLink></li>
-                        <li><NavLink>Add Craft Item</NavLink></li>
-                        <li><NavLink>My Art&Craft List</NavLink></li>
+                        <li><NavLink to={'/'} style={styleNav}>Home</NavLink></li>
+                        <li><NavLink to={'/allArts'} style={styleNav}>All Art & craft Items</NavLink></li>
+                        <li><NavLink to={'/AddArts'} style={styleNav}>Add Craft Item</NavLink></li>
+                        <li><NavLink to={'/myArts'} style={styleNav}>My Art & Craft List</NavLink></li>
                     </ul>
                 </div>
 

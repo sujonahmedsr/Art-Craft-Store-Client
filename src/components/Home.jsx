@@ -24,7 +24,7 @@ const Home = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Glass Painting Set</h1>
                                 <p className="mb-5">A set of high-quality glass paints and brushes for creating beautiful designs on glass surfaces.</p>
-                                <button className="btn btn-primary">See All</button>
+                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ const Home = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Paper Quilling Starter Kit</h1>
                                 <p className="mb-5">Everything you need to start paper quilling - tools, strips, and instructions.</p>
-                                <button className="btn btn-primary">See All</button>
+                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const Home = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Handmade Greeting Cards Set</h1>
                                 <p className="mb-5">A set of 6 beautifully crafted handmade greeting cards for various occasions.</p>
-                                <button className="btn btn-primary">See All</button>
+                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ const Home = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Lampworking Starter Kit</h1>
                                 <p className="mb-5">A comprehensive starter kit for lampworking, includes glass rods, torch, and safety gear.</p>
-                                <button className="btn btn-primary">See All</button>
+                                <button className="px-8 py-3 rounded-full font-bold bg-green-600">See All</button>
                             </div>
                         </div>
                     </div>

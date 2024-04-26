@@ -13,6 +13,7 @@ import Login from './components/Login.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import SignUp from './components/SignUp.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import AddArts from './components/AddArts/AddArts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,18 @@ const router = createBrowserRouter([
       {
         path: '/signUp',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '/allArts',
+      },
+      {
+        path: '/AddArts',
+        element: <PrivateRoute>
+          <AddArts></AddArts>
+        </PrivateRoute>
+      },
+      {
+        path: '/myArts'
       }
     ]
   },
