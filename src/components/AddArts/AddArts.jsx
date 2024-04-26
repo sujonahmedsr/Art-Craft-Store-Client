@@ -97,7 +97,7 @@ const AddArts = () => {
                     </div>
                     <div className="space-y-1 text-sm w-full">
                         <label htmlFor="rating" className="block text-lg font-semibold text-gray-400">rating</label>
-                        <input type='number' required name="rating" id="rating" placeholder="rating 1 to 5" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border" />
+                        <input type='number' required name="rating" id="rating" placeholder="rating 1 to 5" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border" maxLength={5} max={5} min={0}/>
                     </div>
                 </div>
                 <div className="flex items-center lg:flex-row flex-col gap-9">
