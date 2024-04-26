@@ -20,7 +20,7 @@ const Navbar = () => {
         };
     }
     return (
-        <div className="bg-base-100 shadow-lg z-10 fixed left-0 right-0">
+        <div className="bg-base-100 border-b-2 border-b-green-600 z-10 fixed left-0 right-0">
             <div className="navbar container mx-auto px-4">
                 <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden mr-3">
                     {
