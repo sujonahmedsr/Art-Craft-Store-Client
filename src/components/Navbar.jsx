@@ -1,10 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaMinus } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { CgMail } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
-import { Tooltip } from 'react-tooltip'
+import { Tooltip  } from 'react-tooltip'
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -16,15 +16,17 @@ const Navbar = () => {
     return (
         <div className="bg-base-100 shadow-lg z-10 fixed left-0 right-0">
             <div className="navbar container mx-auto px-4">
-                <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden">
-                    <FaBars></FaBars>
+                <div onClick={() => setOpen(!open)} className="text-2xl lg:hidden mr-3">
+                    {
+                       open ? <FaMinus></FaMinus> : <FaBars></FaBars>
+                    }
                 </div>
                 <div className="navbar-start">
                     <a className="text-3xl font-bold cursor-pointer">My <span className="text-green-600">Arts</span></a>
                 </div>
 
 
-                <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white md:bg-transparent w-full md:w-auto  md:py-0 text-gray-900  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>
+                <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white md:bg-transparent w-full md:w-auto  md:py-0 text-gray-500  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>
                     <ul className="text-lg font-medium flex lg:flex-row flex-col md:space-y-0 md:space-x-6 space-x-0 space-y-4 py-4 pl-5">
                         <li><NavLink>Home</NavLink></li>
                         <li><NavLink>All Art & craft Items</NavLink></li>
@@ -32,9 +34,6 @@ const Navbar = () => {
                         <li><NavLink>My Art&Craft List</NavLink></li>
                     </ul>
                 </div>
-
-
-
 
 
                 <div className="navbar-end space-x-2">
