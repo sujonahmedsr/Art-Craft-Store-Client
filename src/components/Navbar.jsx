@@ -23,8 +23,8 @@ const Navbar = () => {
                 </div>
 
 
-                <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white  w-full md:w-auto  md:py-0  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>
-                    <ul className="text-lg font-medium text-slate-800  flex lg:flex-row flex-col md:space-y-0 md:space-x-6 space-x-0 space-y-4 py-4 pl-5">
+                <div className={`navbar-center md:flex md:items-center md:static absolute transition-all z-[-1] md:z-auto left-0  bg-white md:bg-transparent w-full md:w-auto  md:py-0  py-4 top-16 ${open ? 'block' : 'hidden'} duration-500 md:shadow-none shadow-xl`}>
+                    <ul className="text-lg font-medium   flex lg:flex-row flex-col md:space-y-0 md:space-x-6 space-x-0 space-y-4 py-4 pl-5">
                         <li><NavLink>Home</NavLink></li>
                         <li><NavLink>All cart & Art</NavLink></li>
                         <li><NavLink>Add art</NavLink></li>

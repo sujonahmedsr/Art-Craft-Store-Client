@@ -2,10 +2,12 @@ import { updateProfile } from "firebase/auth";
 import auth from "./firebase/firebase";
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
+    const [show, setShow] = useState(false);
 
     const handleCreateUser = e => {
         e.preventDefault()
@@ -46,10 +48,10 @@ const SignUp = () => {
                         <label htmlFor="email" className="block text-gray-400">email</label>
                         <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100 focus:border-violet-400 border" />
                     </div>
-                    <div className="space-y-1 text-sm">
+                    <div className="space-y-1 text-sm relative">
                         <label htmlFor="password" className="block text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border" />
-                        
+                        <input type={`${show ? 'text' : 'password'}`} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border" />
+                        <p onClick={()=>setShow(!show)} className="absolute top-7 right-3 cursor-pointer text-2xl">{show ? <FaRegEye/> : <FaRegEyeSlash/>}</p>
                     </div>
                     {
                         error && <p className="text-red-600">{error}</p>

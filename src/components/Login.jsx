@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaRegEye, FaRegEyeSlash  } from "react-icons/fa";
 
 const Login = () => {
     const { signInMethod } = useContext(AuthContext)
     const [error, setError] = useState(null);
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate()
     const handleSignInMethod = e => {
         e.preventDefault()
         const from = e.target;
@@ -14,6 +17,7 @@ const Login = () => {
         signInMethod(email, password)
             .then(res => {
                 console.log(res.user);
+                navigate(location?.pathname ? location.pathname : '/login')
             })
             .catch(error => {
                 console.log(error);
@@ -31,9 +35,10 @@ const Login = () => {
                         <label htmlFor="username" className="block text-gray-400">Username</label>
                         <input type="text" name="email" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100 focus:border-violet-400 border" />
                     </div>
-                    <div className="space-y-1 text-sm">
+                    <div className="space-y-1 text-sm relative">
                         <label htmlFor="password" className="block text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border" />
+                        <input type={`${show ? 'text' : 'password'}`} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100  focus:border-violet-400 border " />
+                        <p onClick={()=>setShow(!show)} className="absolute top-1/3 right-3 cursor-pointer text-2xl">{show ? <FaRegEye/> : <FaRegEyeSlash/>}</p>
                         <div className="flex justify-end text-xs text-gray-400">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
