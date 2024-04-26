@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const AddArts = () => {
     const { user } = useContext(AuthContext);
@@ -19,13 +20,34 @@ const AddArts = () => {
         const stockStatus = form.stockStatus.value;
         const artItem = {email, Name, image_url, item_name, subcategory_Name, description, price, rating, customization, processing_time, stockStatus}
         console.log(artItem);
+
+        fetch('http://localhost:5000/arts', {
+            method: 'post',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(artItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Your art craft added',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+                form.reset()
+            }
+        })
     }
     return (
         <div className="container mx-auto py-20 px-4">
             <div className="py-5 text-center">
                 <h1 className="text-3xl font-bold">Add Your Item</h1>
             </div>
-            <form onSubmit={handleAddItem} className="space-y-6 max-w-3xl mx-auto dark:bg-slate-600 light:bg-white shadow-2xl p-10">
+            <form onSubmit={handleAddItem} className="space-y-6 max-w-3xl mx-auto dark:bg-slate-600 light:bg-white shadow-2xl p-10 border rounded-lg">
                 <div className="flex items-center lg:flex-row flex-col gap-9">
                     <div className="space-y-1 text-sm w-full">
                         <label htmlFor="Email" className="block text-lg font-semibold text-gray-400 ">User Email

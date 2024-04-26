@@ -6,8 +6,11 @@ import slider1 from '../assets/slider/67e2bc3504a9ebae30c43bae185ce010.jpg'
 import slider2 from '../assets/slider/7131mLRzYYL._AC_UF1000,1000_QL80_.jpg'
 import slider3 from '../assets/slider/91jFFgXWgVL.jpg'
 import slider4 from '../assets/slider/images.jpg'
+import { Link, useLoaderData } from 'react-router-dom';
+import Card from './AllArts/Card';
 
 const Home = () => {
+    const arts = useLoaderData();
     return (
         <div>
             <Swiper
@@ -18,7 +21,7 @@ const Home = () => {
             >
                 <SwiperSlide>
                     <div className="hero h-[95vh]">
-                    <img className='h-[95vh] w-full object-cover object-center' src={slider1} alt="" />
+                        <img className='h-[95vh] w-full object-cover object-center' src={slider1} alt="" />
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -31,7 +34,7 @@ const Home = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="hero h-[95vh]" >
-                    <img className='h-[95vh] w-full object-cover object-center' src={slider2} alt="" />
+                        <img className='h-[95vh] w-full object-cover object-center' src={slider2} alt="" />
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -43,8 +46,8 @@ const Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="hero h-[95vh]" >
-                <img className='h-[95vh] w-full object-cover object-center' src={slider3} alt="" />
+                    <div className="hero h-[95vh]" >
+                        <img className='h-[95vh] w-full object-cover object-center' src={slider3} alt="" />
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -56,8 +59,8 @@ const Home = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="hero h-[95vh]">
-                <img className='h-[95vh] w-full object-cover object-center' src={slider4} alt="" />
+                    <div className="hero h-[95vh]">
+                        <img className='h-[95vh] w-full object-cover object-center' src={slider4} alt="" />
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
@@ -69,6 +72,19 @@ const Home = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
+
+            <div className='py-20 text-center '>
+                <h1 className='text-4xl font-bold underline'>Craft items section</h1>
+            </div>
+            <div className='grid grid-cols-3 gap-6 container mx-auto py-5'>
+                {
+                    arts.slice(0, 6).map(art => <Card key={art._id} art={art}></Card>)
+                }
+
+            </div>
+            <div className='text-center my-10'>
+                <Link to={'/allArts'} ><button className="px-8 py-3 mt-10 bg-green-600 text-white font-semibold rounded-xl">View All Arts & Crafts</button></Link>
+            </div>
         </div>
     );
 };

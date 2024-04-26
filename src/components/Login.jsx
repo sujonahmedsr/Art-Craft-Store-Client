@@ -62,8 +62,8 @@ const Login = () => {
 
     
     return (
-        <div className="py-20 px-4">
-            <div className="w-full max-w-md container mx-auto p-8 space-y-3 rounded-xl text-gray-900 bg-gray-100 shadow-2xl">
+        <div className="py-28 px-4">
+            <div className="w-full max-w-md container mx-auto p-8 space-y-3 border rounded-xl text-gray-900 bg-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSignInMethod} className="space-y-6">
                     <div className="space-y-1 text-sm">
