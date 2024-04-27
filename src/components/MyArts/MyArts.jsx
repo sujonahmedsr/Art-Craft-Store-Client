@@ -32,11 +32,11 @@ const MyArts = () => {
                     .then(data => {
                         console.log(data);
                         if (data.deletedCount) {
-                              Swal.fire({
+                            Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
                                 icon: "success"
-                              });
+                            });
                         }
                         const remaining = items.filter(it => it._id !== id);
                         setItems(remaining)
@@ -46,15 +46,11 @@ const MyArts = () => {
 
     }
 
-
- 
-
-
-    const hanldeYes = (yes)=>{
+    const hanldeYes = (yes) => {
         const result = results.filter(it => it.customization === yes)
         setItems(result)
     }
-    const handleNo = (no)=>{
+    const handleNo = (no) => {
         const result = results.filter(it => it.customization === no)
         setItems(result)
     }
@@ -64,45 +60,35 @@ const MyArts = () => {
             <div>
                 {
                     items.length > 0 ? <h1 className="font-bold text-3xl py-5 text-center">Your added arts and craft is : {items.length}</h1>
-                    : 
-                    <div className="text-center">
-                        <h1 className="font-bold text-3xl py-5">
-                            
-                            <Typewriter
-                                        words={['You dont have post an arts and craft']}
-                                        loop={Infinity}
-                                        cursor
-                                        cursorStyle='_'
-                                        typeSpeed={100}
-                                        deleteSpeed={100}
-                                        delaySpeed={1000}
-                                    />
+                        :
+                        <div className="text-center">
+                            <h1 className="font-bold text-3xl py-5">
+
+                                <Typewriter
+                                    words={['You dont have post an arts and craft']}
+                                    loop={Infinity}
+                                    cursor
+                                    cursorStyle='_'
+                                    typeSpeed={100}
+                                    deleteSpeed={100}
+                                    delaySpeed={1000}
+                                />
                             </h1>
-                        <Link to={'/AddArts'} className="text-green-600 flex items-center gap-5"><FaArrowLeftLong className="my-5 text-3xl text-green-600"></FaArrowLeftLong>Add Your Item</Link>
-                    </div>
+                            <Link to={'/AddArts'} className="text-green-600 flex items-center gap-5"><FaArrowLeftLong className="my-5 text-3xl text-green-600"></FaArrowLeftLong>Add Your Item</Link>
+                        </div>
                 }
                 {
-                    items.length > 1 && <div className="pb-10 text-center">
-                    <details className="dropdown">
-                        <summary className="m-1 btn bg-green-600 text-white">Filter By Customization</summary>
-                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                            <li onClick={()=>hanldeYes('Yes')} ><a>Yes</a></li>
-                            <li onClick={()=>handleNo('No')} ><a>No</a></li>
-                        </ul>
-                    </details>
-                </div>
-                    
-                    
-                    // <div className="flex items-center gap-6">
-                    //     <label htmlFor="Name" className="block text-lg font-bol">Customization</label>
-                    //     <select name="Customization" className="border border-gray-700 p-3 rounded-lg">
-                    //         <option value="select">Select</option>
-                    //         <option value="Yes">Yes</option>
-                    //         <option value="No">No</option>
-                    //     </select>
-                    // </div>
+                    items.length > 0 && <div className="pb-10 text-center">
+                        <details className="dropdown">
+                            <summary className="m-1 btn bg-green-600 text-white">Filter By Customization</summary>
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                <li onClick={() => hanldeYes('Yes')} ><a>Yes</a></li>
+                                <li onClick={() => handleNo('No')} ><a>No</a></li>
+                            </ul>
+                        </details>
+                    </div>
                 }
-                
+
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-5">
                 {
