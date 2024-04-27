@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/arts')
+        loader: ()=> fetch('https://crud-operaion.vercel.app/arts')
       },
       {
         path: '/login',
@@ -41,12 +41,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <AllArts></AllArts>
         </PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/arts')
+        loader: ()=> fetch('https://crud-operaion.vercel.app/arts')
       },
       {
         path: '/details/:id',
-        element: <CardDetails></CardDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/arts/${params.id}`)
+        element: <PrivateRoute>
+          <CardDetails></CardDetails>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`https://crud-operaion.vercel.app/arts/${params.id}`)
       },
       {
         path: '/AddArts',

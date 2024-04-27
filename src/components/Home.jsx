@@ -14,6 +14,7 @@ const Home = () => {
     const arts = useLoaderData();
     return (
         <div>
+            {/* hero section  */}
             <Swiper
                 rewind={true}
                 navigation={true}
@@ -116,8 +117,8 @@ const Home = () => {
             </Swiper>
 
 
-
-
+            
+            {/* Craft items section */}
             <section className='container mx-auto py-20 px-4'>
                 <div className='text-center '>
                     <h1 className='text-4xl font-bold'> <Typewriter
@@ -143,7 +144,7 @@ const Home = () => {
                 </div>
 
 
-
+                    {/* team section  */}
                 <div className='py-10'>
                     <section className="py-6 ">
                         <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
@@ -335,7 +336,7 @@ const Home = () => {
                     </section>
                 </div>
 
-
+                {/* members are saying */}
                 <section className="my-8">
                     <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
                         <h1 className="text-4xl font-semibold leading-none text-center">What our members are saying about us</h1>
@@ -344,14 +345,14 @@ const Home = () => {
                         pagination={{
                             dynamicBullets: true,
                         }}
-                        slidesPerView={3}
+                        slidesPerView={2}
                         spaceBetween={30}
                         freeMode={true}
                         modules={[Pagination]}
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <div className="flex flex-col items-center max-w-lg  mx-12 lg:mx-0">
+                            <div className="flex flex-col items-center max-w-lg mx-auto  lg:mx-0">
                                 <div className="relative text-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 text-gray-700">
                                         <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
