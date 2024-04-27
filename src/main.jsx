@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import AllArts from './components/AllArts/AllArts.jsx';
 import CardDetails from './components/CardDetails.jsx';
 import MyArts from './components/MyArts/MyArts.jsx';
+import UpdateArts from './components/MyArts/UpdateArts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
           <MyArts></MyArts>
         </PrivateRoute>,
         loader: ()=> fetch('https://crud-operaion.vercel.app/arts')
+      },
+      {
+        path: '/updateArts/:id',
+        element: <UpdateArts></UpdateArts>,
+        loader: ({params})=> fetch(`https://crud-operaion.vercel.app/arts/${params.id}`)
       }
     ]
   },
