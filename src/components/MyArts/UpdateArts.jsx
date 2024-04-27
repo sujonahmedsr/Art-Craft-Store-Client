@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const UpdateArts = () => {
     const myArt = useLoaderData();
     const {user} = useContext(AuthContext)
-    const {_id, image_url, item_name, subcategory_Name, price, rating, stockStatus, description, processing_time, customization} = myArt;
+    const { _id, image_url, item_name, subcategory_Name, price, rating, stockStatus, description, processing_time, customization} = myArt;
     const updateMyArt = e =>{
         e.preventDefault()
         const form = e.target;
@@ -26,8 +26,8 @@ const UpdateArts = () => {
         const artItem = { email, Name, image_url, item_name, subcategory_Name, description, price, rating, customization, processing_time, stockStatus }
         console.log(artItem);
 
-        fetch(`http://localhost:5000/arts/${_id}`,{
-            method: 'put',
+        fetch(`https://crud-operaion.vercel.app/arts/${_id}`,{
+            method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
             },
