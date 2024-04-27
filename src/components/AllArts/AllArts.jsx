@@ -41,9 +41,9 @@ const AllArts = () => {
             </div>
             <div className="flex flex-wrap gap-4 items-center py-5">
                 <h1 className="font-bold text-xl">Categories: </h1>
-                <button onClick={handleCategoriesAll}  className="px-3 py-1 md:px-4 md:py-2 border border-green-600 font-semibold rounded hover:rounded-full">All</button>
+                <button onClick={handleCategoriesAll}  className="px-3 py-1 md:px-4 md:py-2 border border-green-600 font-semibold rounded hover:rounded-full text-green-600">All</button>
                 {
-                    buttons.map( (btn, id) => <button onClick={()=>handleCategories(btn)}  className="px-3 py-1 md:px-4 md:py-2 border border-green-600 font-semibold rounded hover:rounded-full" key={id}>{btn}</button>
+                    buttons.map( (btn, id) => <button onClick={()=>handleCategories(btn)}  className="px-3 py-1 md:px-4 md:py-2 border border-green-600 font-semibold rounded hover:rounded-full transition duration-300 text-green-600" key={id}>{btn}</button>
                 )
                 }
             </div>

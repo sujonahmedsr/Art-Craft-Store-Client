@@ -75,14 +75,14 @@ const Navbar = () => {
                                         <div className="flex gap-3 items-center my-4">
 
                                             <img className="w-10 rounded-full" src={user?.photoURL ? user.photoURL : '../../src/assets/User.png'} alt="" />
-                                            <p className="block text-base text-gray-900 dark:text-white font-bold">{user.displayName ? user.displayName : 'Name Not Found'}</p>
+                                            <p className="block text-base text-green-600 dark:text-white font-bold">{user.displayName ? user.displayName : 'Name Not Found'}</p>
                                         </div>
                                         <div className="flex items-center gap-3 my-4">
                                             <CgMail className="text-xl"></CgMail>
                                             <p className="block text-base  text-gray-500 truncate dark:text-gray-400">{user.email}</p>
                                         </div>
 
-                                        <div className="flex items-center gap-3 my-4  pt-3 text-blue-500">
+                                        <div className="flex items-center gap-3 my-4  pt-3 text-green-600">
                                             <IoIosLogOut className="text-xl"></IoIosLogOut>
                                             <button onClick={hangleLogOut} className="text-lg font-medium duration-300 text-center">LogOut</button>
                                         </div>

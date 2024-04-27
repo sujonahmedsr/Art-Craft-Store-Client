@@ -13,6 +13,13 @@ import { Typewriter } from 'react-simple-typewriter'
 const Home = () => {
     let location = useLocation();
     document.title =  `My Arts | home ${location.pathname.slice(1)}`;
+
+    const buttons = ['Card Making',
+    'Scrapbooking',
+    'Paper Quilling & origami',
+    'Glass Painting',
+    'Lampworking',
+    'Glass Dying & Staining']
     const arts = useLoaderData();
     return (
         <div>
@@ -148,7 +155,7 @@ const Home = () => {
 
                 <section className='py-20 container mx-auto px-4'>
                     <div>
-                        <h1 className='font-bold text-4xl md:text-5xl text-center'>
+                        <h1 className='font-bold text-4xl md:text-5xl text-center pt-10'>
                         <Typewriter
                         words={['Art & Craft Categories Section']}
                         loop={Infinity}
@@ -160,7 +167,13 @@ const Home = () => {
                     />
                         </h1>
                     </div>
-
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-16'>
+                        {
+                            buttons.map((btn, id)=> <Link to={'/allArts'} className="px-4 py-10 border border-green-600 font-bold rounded hover:rounded-full text-2xl transition duration-300" key={id}>
+                            <button  >{btn}</button>
+                            </Link>)
+                        }
+                    </div>
                 </section>
 
 
