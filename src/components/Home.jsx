@@ -6,11 +6,13 @@ import slider1 from '../assets/slider/67e2bc3504a9ebae30c43bae185ce010.jpg'
 import slider2 from '../assets/slider/7131mLRzYYL._AC_UF1000,1000_QL80_.jpg'
 import slider3 from '../assets/slider/91jFFgXWgVL.jpg'
 import slider4 from '../assets/slider/images.jpg'
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import Card from './AllArts/Card';
 import { Typewriter } from 'react-simple-typewriter'
 
 const Home = () => {
+    let location = useLocation();
+    document.title =  `My Arts | home ${location.pathname.slice(1)}`;
     const arts = useLoaderData();
     return (
         <div>
@@ -117,11 +119,11 @@ const Home = () => {
             </Swiper>
 
 
-            
+
             {/* Craft items section */}
             <section className='container mx-auto py-20 px-4'>
                 <div className='text-center '>
-                    <h1 className='text-4xl font-bold'> <Typewriter
+                    <h1 className='text-4xl md:text-5xl font-bold'> <Typewriter
                         words={[' Craft items section']}
                         loop={Infinity}
                         cursor
@@ -144,12 +146,41 @@ const Home = () => {
                 </div>
 
 
-                    {/* team section  */}
+                <section className='py-20 container mx-auto px-4'>
+                    <div>
+                        <h1 className='font-bold text-4xl md:text-5xl text-center'>
+                        <Typewriter
+                        words={['Art & Craft Categories Section']}
+                        loop={Infinity}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={100}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                        </h1>
+                    </div>
+
+                </section>
+
+
+                {/* team section  */}
                 <div className='py-10'>
                     <section className="py-6 ">
                         <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
                             <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">Development team</p>
-                            <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">The talented people behind the scenes</h1>
+                            <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
+
+                                <Typewriter
+                                    words={['The talented people behind the scenes']}
+                                    loop={Infinity}
+                                    cursor
+                                    cursorStyle='_'
+                                    typeSpeed={100}
+                                    deleteSpeed={100}
+                                    delaySpeed={1000}
+                                />
+                            </h1>
                             <div className="flex flex-row flex-wrap-reverse justify-center mt-8">
                                 <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-100 text-gray-800">
                                     <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?0" />

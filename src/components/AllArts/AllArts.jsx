@@ -1,9 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Card from "./Card";
 import { Typewriter } from 'react-simple-typewriter'
 import { useState } from "react";
 
 const AllArts = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const itemArts = useLoaderData();
     const [arts, setArts] = useState(itemArts)
     const buttons = ['Card Making',

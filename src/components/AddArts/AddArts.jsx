@@ -2,8 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import { Typewriter } from 'react-simple-typewriter'
+import { useLocation } from "react-router-dom";
 
 const AddArts = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const { user } = useContext(AuthContext);
     const handleAddItem = e => {
         e.preventDefault()

@@ -45,7 +45,7 @@ const Navbar = () => {
                     <ul className="text-lg font-medium flex lg:flex-row flex-col md:space-y-0 md:space-x-6 space-x-0 space-y-4 py-4 pl-5">
                         <li><NavLink to={'/'} style={styleNav}>Home</NavLink></li>
                         <li><NavLink to={'/allArts'} style={styleNav}>All Art & craft Items</NavLink></li>
-                        <li><NavLink to={'/AddArts'} style={styleNav}>Add Craft Item</NavLink></li>
+                        <li><NavLink to={'/AddArts'} style={styleNav}>Add Art & Craft Item</NavLink></li>
                         <li><NavLink to={'/myArts'} style={styleNav}>My Art & Craft List</NavLink></li>
                     </ul>
                 </div>
@@ -91,7 +91,10 @@ const Navbar = () => {
                             </>
 
                             :
-                            <Link to={'/login'} className="px-8 py-3 bg-green-600 text-white font-semibold rounded-full">Login</Link>
+                            <div className="space-x-2 flex items-center">
+                                <Link to={'/login'} className="px-8 py-3 bg-green-600 text-white font-semibold rounded-xl">Login</Link>
+                                <Link to={'/signUp'} className="px-8 py-3 hidden md:block bg-green-600 text-white font-semibold rounded-xl">Register</Link>
+                            </div>
                     }
                 </div>
             </div>

@@ -6,15 +6,18 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebas
 import auth from "./firebase/firebase";
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Typewriter } from "react-simple-typewriter";
 
 
 
 const Login = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const { signInMethod } = useContext(AuthContext)
     const [error, setError] = useState(null);
     const [show, setShow] = useState(false);
     const navigate = useNavigate()
-    let location = useLocation();
 
 
     const handleSignInMethod = e => {
@@ -64,7 +67,17 @@ const Login = () => {
     return (
         <div className="py-28 px-4">
             <div className="w-full max-w-md container mx-auto p-8 space-y-3 border rounded-xl text-gray-900 bg-gray-100 shadow-2xl">
-                <h1 className="text-2xl font-bold text-center">Login</h1>
+                <h1 className="text-2xl font-bold text-center">
+                <Typewriter
+                        words={['Login Now']}
+                        loop={Infinity}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={100}
+                        deleteSpeed={100}
+                        delaySpeed={1000}
+                    />
+                </h1>
                 <form onSubmit={handleSignInMethod} className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="username" className="block text-gray-400">Username</label>

@@ -1,10 +1,13 @@
 import { FaStar } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 
 
 const CardDetails = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const art = useLoaderData();
     const { image_url, item_name, subcategory_Name, description, price, rating, stockStatus, customization, processing_time, Name, email } = art;
     return (

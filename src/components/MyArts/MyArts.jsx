@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -7,6 +7,9 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { Typewriter } from "react-simple-typewriter";
 
 const MyArts = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const arts = useLoaderData();
     const { user } = useContext(AuthContext);
     const email = user.email;

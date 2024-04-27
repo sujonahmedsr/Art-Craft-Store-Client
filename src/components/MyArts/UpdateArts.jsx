@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const UpdateArts = () => {
+    let location = useLocation();
+    document.title =  `My Arts | ${location.pathname.slice(1)}`;
+
     const myArt = useLoaderData();
     const {user} = useContext(AuthContext)
     const { _id, image_url, item_name, subcategory_Name, price, rating, stockStatus, description, processing_time, customization} = myArt;
