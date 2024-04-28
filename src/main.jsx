@@ -40,9 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allArts',
-        element: <PrivateRoute>
-          <AllArts></AllArts>
-        </PrivateRoute>,
+        element: <AllArts></AllArts>,
         loader: ()=> fetch('https://crud-operaion.vercel.app/arts')
       },
       {

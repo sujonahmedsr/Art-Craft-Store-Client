@@ -5,7 +5,7 @@ import { AuthContext } from "./AuthProvider/AuthProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useLocation } from "react-router-dom";
+import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 const SignUp = () => {
@@ -15,6 +15,7 @@ const SignUp = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [show, setShow] = useState(false);
+    const navigate = useNavigate()
 
     const handleCreateUser = e => {
         e.preventDefault()
@@ -39,6 +40,7 @@ const SignUp = () => {
                     displayName: name,
                     photoURL: photoUrl
                 })
+                navigate('/')
                 toast('sign up successfully')
             })
             .catch(error => {
@@ -70,7 +72,7 @@ const SignUp = () => {
                         <input type="email" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md border-gray-700 text-gray-900 bg-gray-100 focus:border-violet-400 border" />
                     </div>
                     <div className="space-y-1 text-base">
-                        <label htmlFor="email" className="block ">Photo URL</label>
+                        <label htmlFor="photoUrl" className="block">Photo URL</label>
                         <input type="text" name="photoUrl" id="photoUrl" placeholder="photo URL" className="w-full px-4 py-3 rounded-md border-gray-700 text-black border" />
                     </div>
                     <div className="space-y-1 text-sm relative">
