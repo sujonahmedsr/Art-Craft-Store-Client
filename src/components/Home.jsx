@@ -169,7 +169,7 @@ const Home = () => {
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-16'>
                         {
-                            buttons.map((btn, id)=> <Link to={'/allArts'} className="px-4 py-10 border border-green-600 font-bold rounded hover:rounded-full text-2xl transition duration-300" key={id}>
+                            buttons.map((btn, id)=> <Link to={'/allArts'} className="px-4 py-10 border text-center border-green-600 font-bold rounded hover:rounded-full text-2xl transition duration-300" key={id}>
                             <button  >{btn}</button>
                             </Link>)
                         }

@@ -1,11 +1,14 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Card = ({ art }) => {
     const { _id, image_url, item_name, subcategory_Name, price, rating, stockStatus } = art;
     return (
         <div>
-            <div className="bg-slate-50 text-slate-900 p-5 rounded-xl shadow-2xl border hover:border-green-500 duration-300 transition ">
+            <div data-aos="fade-up" className="bg-slate-50 text-slate-900 p-5 rounded-xl shadow-2xl border hover:border-green-500 duration-300 transition ">
                 <div className="relative">
                     <img className="w-full h-80 rounded-lg" src={image_url} alt="" />
                     <div className="absolute top-2 left-2">
